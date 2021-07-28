@@ -1,7 +1,4 @@
-package Samples.Encyclopedia;
-
-import WorkBookTask.Task_46_51_WorkWithFile.Task_51.Person;
-
+package Encyclopedia2;
 
 import java.io.BufferedWriter;
 import java.io.File;

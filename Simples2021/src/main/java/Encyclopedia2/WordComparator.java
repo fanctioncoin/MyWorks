@@ -1,4 +1,4 @@
-package Samples.Encyclopedia;
+package Encyclopedia2;
 
 import java.util.Arrays;
 import java.util.Locale;
