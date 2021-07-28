@@ -32,7 +32,7 @@ public class ReaderBook {
                                     for(String simpleWord:simpleWords){
                                         if (simpleWord!=null && simpleWord.length()>2){ // ограничиваем длинну слова больше 2 букв
                                            WordComparator wc2=new WordComparator(simpleWord);
-                                           if (wc.compareTo(simpleWord)*wc2.compareTo(Runner.word)>0.5){
+                                           if (wc.compareTo(simpleWord)*wc2.compareTo(Runner.word)>ConfigScoring.THRESHOLD_VALUE){
                                                WriterWords.writeInFile(matcher2.group(1) +" " + wc+" \n"+matcher2.group(2)+"\n\n\n");
                                                break;
                                            }

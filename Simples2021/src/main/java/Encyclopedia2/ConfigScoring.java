@@ -13,6 +13,6 @@ public  final  class ConfigScoring {
 
     protected static  String NAME_TEXT_FILE="findWord.txt"; //имя файла куда будет записываться
 
-    protected static double THRESHOLD_VALUE = 0.95; //пороговое значение для нахождения соответсвия слов( около 80% )
+    protected static double THRESHOLD_VALUE = 0.4; //пороговое значение для нахождения соответсвия слов( около 80% )
 
 }
