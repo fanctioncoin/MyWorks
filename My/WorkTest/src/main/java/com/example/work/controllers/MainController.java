@@ -48,7 +48,7 @@ public class MainController {
     public String add(
             @AuthenticationPrincipal User user,
             @RequestParam String modelAuto,
-            @RequestParam Integer mileage,
+            @RequestParam Long mileage,
             @RequestParam String text,
             @RequestParam String tag, Map<String,Object> model,
             @RequestParam("file") MultipartFile file

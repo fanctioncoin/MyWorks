@@ -6,11 +6,11 @@ import javax.persistence.*;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String text; //будет храниться текст
     private String tag; // будем хранить vin, для поиска
     private String modelAuto;
-    private Integer mileage;
+    private Long mileage;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
@@ -24,7 +24,7 @@ public class Message {
 
     }
 
-    public Message(String modelAuto,Integer mileage, String text, String tag,User autor) {
+    public Message(String modelAuto,Long mileage, String text, String tag,User autor) {
         this.modelAuto=modelAuto;
         this.mileage = mileage;
         this.text = text;
@@ -35,11 +35,11 @@ public class Message {
         return autor!=null ? autor.getUsername(): "<none>";
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -67,11 +67,11 @@ public class Message {
         this.modelAuto = modelAuto;
     }
 
-    public Integer getMileage() {
+    public Long getMileage() {
         return mileage;
     }
 
-    public void setMileage(Integer mileage) {
+    public void setMileage(Long mileage) {
         this.mileage = mileage;
     }
 

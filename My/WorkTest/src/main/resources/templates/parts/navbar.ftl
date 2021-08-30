@@ -20,6 +20,12 @@
                         <a class="nav-link active"  href="/user">User list</a>
                     </li>
                 </#if>
+                <#if user??>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="/user/profile">Profile</a>
+                    </li>
+                </#if>
             </ul>
 
             <div class="navbar-text me-5 ">${name}</div>
