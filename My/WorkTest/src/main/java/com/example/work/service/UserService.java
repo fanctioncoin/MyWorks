@@ -4,6 +4,7 @@ import com.example.work.domain.Role;
 import com.example.work.domain.User;
 import com.example.work.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,6 +26,9 @@ public class UserService implements UserDetailsService {
 //        this.userRepo = userRepo;}
     @Autowired
     private MailSender mailSender;
+
+    @Value("${hostname}")
+    private String hostname;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException,LockedException {
@@ -56,8 +60,11 @@ public class UserService implements UserDetailsService {
         if (!StringUtils.isEmpty(user.getEmail())){
             String message =String.format(
                     "Hello, %s! \n"+
-                            "Welcome to Journal STO, Please, visit next link: http://localhost:8080/activate/%s",
-                    user.getUsername(), user.getActivationCode()
+                            "Welcome to Journal STO, Please, visit next link: http://%s/activate/%s",
+                    user.getUsername(),
+                    hostname,
+                    user.getActivationCode()
+
             );
               mailSender.send(user.getEmail(),"Activation code",message);
         }
