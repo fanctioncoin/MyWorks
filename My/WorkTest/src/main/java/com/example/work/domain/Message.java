@@ -1,15 +1,29 @@
 package com.example.work.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = "Please fill the Description")
+    @Length(max=2048,message ="Message too long(more than 2kB)" )
     private String text; //будет храниться текст
+
+    @NotBlank(message = "Please fill the VIN")
+    @Length(max=255,message ="Message too long" )
     private String tag; // будем хранить vin, для поиска
+
+    @NotBlank(message = "Please fill the model auto")
     private String modelAuto;
+
+    @NotNull(message = "Please fill the mileage")
     private Long mileage;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -12,21 +12,51 @@
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         Add new Car
     </a>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse <#if message??>show</#if>" id="collapseExample">
         <div class="form-group mt-3">
             <form method="post" enctype="multipart/form-data">
+
                 <div class="form-group">
-                    <input type="text" name="modelAuto" class="form-control" placeholder="Введите марку авто"/>
+                    <input type="text" class="form-control ${(modelAutoError??)?string('is-invalid','')}"
+                           value="<#if message??>${message.modelAuto}</#if>" name="modelAuto"
+                           placeholder="Write the car model"/>
+                    <#if modelAutoError??>
+                        <div class="invalid-feedback">
+                            ${modelAutoError}
+                        </div>
+                    </#if>
                 </div>
+
                 <div class="form-group">
-                    <input type="text" name="mileage" class="form-control" placeholder="Пробег, км"/>
+                    <input type="text"  class="form-control${(mileageError??)?string('is-invalid','')}"
+                           value="<#if message??>${message.mileage!0}</#if>"  name="mileage" placeholder="Mileage, km"/>
+                    <#if mileageError??>
+                        <div class="invalid-feedback">
+                            ${mileageError}
+                        </div>
+                    </#if>
                 </div>
+
                 <div class="form-group">
-                    <input type="text" name="text" class="form-control" placeholder="Вид работ"/>
+                    <input type="text" class="form-control ${(textError??)?string('is-invalid','')}"
+                           value="<#if message??>${message.text}</#if>" name="text" placeholder="Description"/>
+                    <#if textError??>
+                        <div class="invalid-feedback">
+                            ${textError}
+                        </div>
+                    </#if>
                 </div>
+
                 <div class="form-group">
-                    <input type="text" name="tag" class="form-control" placeholder="VIN">
+                    <input type="text" placeholder="VIN" class="form-control ${(tagError??)?string('is-invalid','')}"
+                           value="<#if message??>${message.tag}</#if>" name="tag"/>
+                    <#if tagError??>
+                        <div class="invalid-feedback">
+                            ${tagError}
+                        </div>
+                    </#if>
                 </div>
+
                 <div class="form-group">
                     <div class="custom-file">
                         <input type="file" name="file" id="customFile">
@@ -35,7 +65,7 @@
                 </div>
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary ">Добавить запись!</button>
+                    <button type="submit" class="btn btn-primary ">Add</button>
                 </div>
             </form>
         </div>
