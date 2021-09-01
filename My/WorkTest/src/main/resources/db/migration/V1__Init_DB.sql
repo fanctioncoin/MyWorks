@@ -38,7 +38,7 @@
 -- #  alter table user_role
 -- #      add constraint user_role_user_fk
 -- #          foreign key (user_id) references usr (id);
---
+-- для Postgressa
 -- create sequence hibernate_sequence start 1 increment 1;
 --
 -- create table message (

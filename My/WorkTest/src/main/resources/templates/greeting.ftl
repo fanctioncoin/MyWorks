@@ -2,8 +2,8 @@
 <@c.page>
 
 
-    <h4> Hello! We are happy to see you.</h4>
-    <div> This is journal-helper STO. </div>
+    <h4> </h4>
+    <div>  </div>
 </@c.page>
 
 

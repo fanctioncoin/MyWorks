@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  mr-auto">
+            <ul class="navbar-nav  me-auto">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
@@ -28,7 +28,7 @@
                 </#if>
             </ul>
 
-            <div class="navbar-text mr-5 ">${name}</div>
+            <div class="navbar-text me-5 ">${name}</div>
            <@l.logout />
         </div>
     </div>

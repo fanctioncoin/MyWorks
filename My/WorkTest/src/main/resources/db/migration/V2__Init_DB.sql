@@ -5,7 +5,7 @@
 -- values (1, 'USER'),
 --        (1, 'ADMIN');
 
-
+-- - для Postgressa
 -- insert into usr (id, username, password, active)
 -- values (1, 'admin', '123', true);
 --

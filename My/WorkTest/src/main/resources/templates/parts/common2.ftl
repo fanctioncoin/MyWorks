@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="author" content="Vyacheslav Staravoyt and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.84.0">
         <title>Cover Template · Bootstrap v5.0</title>
 
@@ -43,7 +43,7 @@
 <div class="container-fluid d-flex h-100 p-0 mx-auto flex-column">
     <header class="masthead mb-auto">
 
-                    <#include "navbar.ftl">
+                    <#include "navbarStart.ftl">
 
         </header>
 

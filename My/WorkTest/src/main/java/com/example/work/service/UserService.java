@@ -27,7 +27,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private MailSender mailSender;
 
-    @Value("${hostname}")
+    @Value(" ${hostname}")
     private String hostname;
 
     @Override
@@ -60,9 +60,9 @@ public class UserService implements UserDetailsService {
         if (!StringUtils.isEmpty(user.getEmail())){
             String message =String.format(
                     "Hello, %s! \n"+
-                            "Welcome to Journal STO, Please, visit next link: http://%s/activate/%s",
+                            "Welcome to Journal STO, Please, visit next link: http://194.195.241.62:8095/activate/%s",
                     user.getUsername(),
-                    hostname,
+//                    hostname,
                     user.getActivationCode()
 
             );
