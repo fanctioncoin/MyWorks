@@ -11,7 +11,7 @@ scp -i ~/.ssh/id_rsa \
 
 echo 'Restart server...'
 
-ssh -tt -i ~/.ssh/id_rsa staravojt.v.a@194.195.241.62 << EOF
+ssh -i ~/.ssh/id_rsa staravojt.v.a@194.195.241.62 << EOF
 pgrep java | xargs kill -9
 nohup java -jar Work-0.0.1-SNAPSHOT.jar > log.txt &
 EOF
